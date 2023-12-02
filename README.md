@@ -41,3 +41,36 @@ laravel new laravel-app
 2. PHP Namespace Resolver
 3. PHP Intelephense
 
+# CODE IGNITER-4.4.x
+Code Igniter 4.4.x setup on ubuntu 22.04.1
+
+## Requirement
+### 1. Update the package index
+```bash
+sudo apt-get update
+```
+### 2. Downloads and installs the most recent packages,
+```bash
+sudo apt-get upgrade
+```
+### 3. Install php 8 and extention required
+```bash
+sudo apt install php8.1-cli php-intl php-mbstring php-json php-curl php-imagick php8.1-mysql
+```
+### 4. Install composer
+```bash
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'e21205b207c3ff031906575712edab6f13eb0b361f2085f1f1237b7126d785e826a450292b6cfd1d64d92e6563bbde02') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+sudo mv composer.phar /usr/local/bin/composer
+composer -V
+```
+### 5. Install code igniter
+```bash
+composer create-project codeigniter4/appstarter project-root
+```
+### 6. Run the server
+```bash
+php spark serve
+```
